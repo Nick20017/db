@@ -8,6 +8,8 @@ go
 create type mark
 from tinyint null;
 
+create default dbo.default_mark as 3;
+
 exec sp_bindefault default_mark, mark;
 exec sp_bindrule mark_rule, mark;
 
