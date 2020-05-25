@@ -10,6 +10,9 @@ from tinyint null;
 
 create default dbo.default_mark as 3;
 
+create rule mark_rule
+as @mark > 0 and @mark <= 5;
+
 exec sp_bindefault default_mark, mark;
 exec sp_bindrule mark_rule, mark;
 
